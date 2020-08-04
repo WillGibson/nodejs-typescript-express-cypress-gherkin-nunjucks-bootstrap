@@ -12,6 +12,19 @@
     "test:cypress": "node_modules/.bin/cypress run --spec **/*.features",
     "test:cypress:open": "node_modules/.bin/cypress open"
   },
+  "nodemonConfig": {
+    "exec": "npm run build && npm start",
+    "ext": "ts",
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ]
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
@@ -24,20 +37,10 @@
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "**/*.test.ts",
-      "**/*.spec.ts",
-      ".git",
-      "node_modules"
-    ],
-    "watch": [
-      "src"
-    ],
-    "exec": "npm run build && npm start",
-    "ext": "ts"
   }
 }
