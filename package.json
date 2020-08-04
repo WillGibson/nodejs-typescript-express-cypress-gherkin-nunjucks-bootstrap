@@ -9,6 +9,7 @@
     "build": "npx tsc -p .",
     "start": "node src/app.js",
     "start:watch": "nodemon",
+    "test:cypress": "node_modules/.bin/cypress run --spec **/*.features",
     "test:cypress:open": "node_modules/.bin/cypress open"
   },
   "dependencies": {
